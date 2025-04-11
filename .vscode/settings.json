@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5433,
+            "driver": "PostgreSQL",
+            "name": "Progress Tracker DB",
+            "group": "PostgreSQL ",
+            "database": "progress_tracker",
+            "username": "postgres",
+            "password": "oscar"
+        }
+    ]
+}

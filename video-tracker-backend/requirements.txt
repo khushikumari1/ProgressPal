@@ -3,3 +3,6 @@ uvicorn
 sqlalchemy
 psycopg2-binary
 pydantic
+pydantic[email]
+python-jose
+pip install passlib[bcrypt]

@@ -1,7 +1,7 @@
 // src/hooks/useVideoTracker.js
 import { useEffect, useRef, useState } from 'react';
-import { fetchProgress, saveProgress } from '../api/progressApi';
-import { mergeIntervals } from '../utils/mergeIntervals';
+import { fetchProgress, saveProgress } from '../api/progress';
+import { mergeIntervals } from '../utils/mergeUtils';
 
 export const useVideoTracker = ({ userId, videoId }) => {
     const videoRef = useRef(null);

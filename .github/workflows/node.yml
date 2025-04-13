@@ -1,0 +1,37 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow when pushing to the 'main' branch
+  pull_request:
+    branches:
+      - main  # Trigger the workflow when a PR is created for 'main' branch
+
+jobs:
+  build:
+    runs-on: windows-latest  # This ensures the workflow runs on Windows
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # Checkout your repository
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2  # Set up Node.js environment
+      with:
+        node-version: '16'  # Specify the version of Node.js you're using
+
+    - name: Install dependencies
+      run: npm install  # Install the dependencies
+
+    - name: Run tests
+      run: npm test  # Run your tests (if you have any)
+
+    - name: Build project
+      run: npm run build  # Build the project (if you have a build script)
+
+    - name: Upload Artifacts (Optional)
+      uses: actions/upload-artifact@v2  # Upload build artifacts if needed
+      with:
+        name: build-artifacts
+        path: path-to-artifacts  # Modify with actual path if applicable

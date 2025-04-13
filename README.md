@@ -6,32 +6,32 @@
 
 ## ✨ Features
 
-- 🎯 **Smart Progress Tracking:** Accurately tracks only the newly watched intervals to prevent cheating via skipping or rewatching.
-- 💾 **Save & Resume:** User progress is persistently stored and automatically resumed across sessions.
-- 🎥 **Seamless Video Controls:** Users are free to seek, pause, replay, or skip — the system still only logs meaningful progress.
-- 📊 **Dynamic Custom Progress Bar:** Visually renders watched segments with intuitive feedback.
-- 🚀 **User-Centric Experience:** Empowers students with freedom while maintaining precision in learning analytics.
+- **Smart Progress Tracking:** Accurately tracks only the newly watched intervals to prevent cheating via skipping or rewatching.
+- **Save & Resume:** User progress is persistently stored and automatically resumed across sessions.
+- **Seamless Video Controls:** Users are free to seek, pause, replay, or skip — the system still only logs meaningful progress.
+- **Dynamic Custom Progress Bar:** Visually renders watched segments with intuitive feedback.
+- **User-Centric Experience:** Empowers students with freedom while maintaining precision in learning analytics.
 
 ---
 
-## 🧰 Technologies Used
+## Technologies Used
 
-- ⚙️ **Backend:** FastAPI (Python)
-- 🖥️ **Frontend:** ReactJS
-- 🗃️ **Database:** PostgreSQL with SQLAlchemy ORM
-- 📺 **Video Integration:** YouTube Player via `react-youtube`
+- **Backend:** FastAPI (Python)
+- **Frontend:** ReactJS
+- **Database:** PostgreSQL with SQLAlchemy ORM
+- **Video Integration:** YouTube Player via `react-youtube`
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
-### 🔧 Prerequisites
+### Prerequisites
 
 - Python 3.x
 - Node.js and npm
 - PostgreSQL (or compatible SQL database)
 
-### 🛠️ Backend Setup
+### Backend Setup
 
 ```bash
 git clone https://github.com/khushikumari1/progresspal.git
@@ -57,7 +57,7 @@ Start the server:
 uvicorn main:app --reload
 ```
 
-### 🌐 Frontend Setup
+### Frontend Setup
 
 ```bash
 cd video-tracker-front
@@ -71,7 +71,7 @@ Access the app at:
 
 ---
 
-## 📡 API Endpoints
+## API Endpoints
 
 - `GET /progress/{user_id}/{video_id}` – Fetch saved progress
 - `POST /progress/{user_id}/{video_id}` – Submit updated watched intervals
@@ -88,9 +88,9 @@ Access the app at:
 
 ---
 
-## 📐 Design Documentation
+## Design Documentation
 
-### 🔍 Tracking Watched Intervals
+### Tracking Watched Intervals
 
 ProgressPal captures user activity per second, tracking when a video is playing and logging start-end intervals in real time. The frontend stores these intervals and pushes them to the backend upon pause, end, or regular intervals.
 
@@ -101,7 +101,7 @@ ProgressPal captures user activity per second, tracking when a video is playing 
 ]
 ```
 
-### 🔗 Merging Intervals to Avoid Duplication
+### Merging Intervals to Avoid Duplication
 
 To ensure that rewatched or overlapping intervals don't bloat the progress, the backend merges new intervals with those already stored:
 
@@ -117,7 +117,7 @@ Merged: [{ "start": 0, "end": 30 }, { "start": 50, "end": 80 }]
 
 The merging logic ensures that progress is based solely on **unique seconds watched**.
 
-### 📊 Calculating Progress Percentage
+### Calculating Progress Percentage
 
 ```text
 Unique Seconds Watched = Σ (merged intervals)
@@ -127,13 +127,13 @@ Progress (%) = (Unique Seconds Watched / Video Duration) × 100
 
 The frontend periodically recalculates this value and updates the visual progress bar.
 
-### 💾 Persistent Save & Seamless Resume
+### Persistent Save & Seamless Resume
 
 - Each user's progress is stored with their `user_id` and `video_id`.
 - When a user returns, the video resumes exactly from the last saved timestamp.
 - Watched segments are visually rendered, and total progress is instantly visible.
 
-### 🧠 Design Decisions & Challenges
+### Design Decisions & Challenges
 
 | Challenge | Solution |
 |----------|----------|
@@ -144,17 +144,17 @@ The frontend periodically recalculates this value and updates the visual progres
 
 ---
 
-## 🚀 Planned Enhancements
+## Planned Enhancements
 
-- 🎞️ Video Selector Dropdown
-- 🖱️ Hover Tooltips on Watched Segments
-- 🌡️ Heatmap Visualization of Attention
-- 🔵 Circular Progress Dial for Completion
-- 🌙 Responsive UI with Dark Mode
+- Video Selector Dropdown
+- Hover Tooltips on Watched Segments
+- Heatmap Visualization of Attention
+- Circular Progress Dial for Completion
+- Responsive UI with Dark Mode
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions from the community:
 1. Fork the repository
@@ -165,7 +165,7 @@ We welcome contributions from the community:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. Feel free to use, modify, and distribute it as needed!
 

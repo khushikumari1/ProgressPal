@@ -1,7 +1,7 @@
 from pydantic import BaseModel, EmailStr, Field, constr
 from typing import List, Optional
 
-# 🔐 User-related Schemas
+# User-related Schemas
 
 class UserCreate(BaseModel):
     email: EmailStr
